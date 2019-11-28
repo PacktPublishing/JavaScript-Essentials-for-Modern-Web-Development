@@ -1,0 +1,25 @@
+{
+  "name": "Example5.5.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm i webpack webpack-cli -g",
+    "postinstall": "webpack",
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "lodash": "^4.17.15"
+  }
+}
