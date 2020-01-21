@@ -1,0 +1,44 @@
+http:
+  port: 8080
+  hostname: 0.0.0.0
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  # see: http://www.express-gateway.io/docs/configuration/gateway.config.yml/apiEndpoints
+  auth-service:
+    host: "*"
+    paths: ["/api/auth/*", "/api/auth/"]
+  import-service:
+    host: "*"
+    paths: ["/api/*"]
+serviceEndpoints:
+  # see: http://www.express-gateway.io/docs/configuration/gateway.config.yml/serviceEndpoints
+  auth-service-endpoint:
+    url: http://localhost:5002/
+  import-service-endpoint:
+    url: http://localhost:5001/
+policies:
+  - proxy
+pipelines:
+  # see: https://www.express-gateway.io/docs/configuration/gateway.config.yml/pipelines
+  auth-service-pipeline:
+    apiEndpoints:
+      - auth-service
+    policies:
+      -
+        proxy:
+          action:
+            serviceEndpoint: auth-service-endpoint
+            changeOrigin: true
+            stripPath: true
+  import-service-pipeline:
+    apiEndpoints:
+      - import-service
+    policies:
+      -
+        proxy:
+          action:
+            serviceEndpoint: import-service-endpoint
+            changeOrigin: true
+            stripPath: true
