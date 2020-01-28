@@ -1,5 +1,5 @@
 # JavaScript-Essentials-for-Modern-Web-Development
-This is the code repository for [JavaScript Essentials for Modern Web Development [Video]](Website), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
+This is the code repository for [JavaScript Essentials for Modern Web Development [Video]](https://www.packtpub.com/web-development/javascript-essentials-for-modern-web-development-video), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
 
 
 
